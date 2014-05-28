@@ -20,7 +20,7 @@ define(['jquery-loader'], function($){
    * Check it the element is below the fold
    *
    * @method
-   * @name jquery.fold#$.belowthefold
+   * @name jquery.fold#belowthefold
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
@@ -44,7 +44,7 @@ define(['jquery-loader'], function($){
    * Check it the element is right of the fold
    *
    * @method
-   * @name jquery.fold#$.rightoffold
+   * @name jquery.fold#rightoffold
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
@@ -68,7 +68,7 @@ define(['jquery-loader'], function($){
    * Check it the element is above the top
    *
    * @method
-   * @name jquery.fold#$.abovethetop
+   * @name jquery.fold#abovethetop
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
@@ -92,7 +92,7 @@ define(['jquery-loader'], function($){
    * Check it the element is left of the begininning
    *
    * @method
-   * @name jquery.fold#$.leftofbegin
+   * @name jquery.fold#leftofbegin
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
@@ -116,7 +116,7 @@ define(['jquery-loader'], function($){
    * Check it the element is in the viewport
    *
    * @method
-   * @name jquery.fold#$.inviewport
+   * @name jquery.fold#inviewport
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
