@@ -1,9 +1,9 @@
 {
-  "name": "jquery-fold",
+  "name": "gemini-fold",
   "authors": [
     {"name": "Matt Rose", "email": "matt@mattrose.ca"}
   ],
   "dependencies": {
-    "jquery-loader": "ssh://git@stash.carpages.ca/gem/jquery-loader.git"
+    "gemini-loader": "ssh://git@stash.carpages.ca/gem/gemini-loader.git"
   }
 }

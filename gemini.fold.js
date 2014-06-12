@@ -1,26 +1,26 @@
 /**
  * @fileoverview
 
-jQuery helpers when dealing with the fold of the window, or an individual
+Gemini helpers when dealing with the fold of the window, or an individual
 element. Simply put, it tells you whether an element is on the screen.
 
  *
- * @namespace jquery.fold
+ * @namespace gemini.fold
  * @copyright Carpages.ca 2014
  * @author Matt Rose <matt@mattrose.ca>
  *
- * @requires jquery
+ * @requires gemini
  *
  * @example
-  $.belowthefold('#js-some-item');
+  G.belowthefold('#js-some-item');
  */
-define(['jquery-loader'], function($){
+define(['gemini'], function($){
 
   /**
    * Check it the element is below the fold
    *
    * @method
-   * @name jquery.fold#belowthefold
+   * @name gemini.fold#belowthefold
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
@@ -44,7 +44,7 @@ define(['jquery-loader'], function($){
    * Check it the element is right of the fold
    *
    * @method
-   * @name jquery.fold#rightoffold
+   * @name gemini.fold#rightoffold
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
@@ -68,7 +68,7 @@ define(['jquery-loader'], function($){
    * Check it the element is above the top
    *
    * @method
-   * @name jquery.fold#abovethetop
+   * @name gemini.fold#abovethetop
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
@@ -92,7 +92,7 @@ define(['jquery-loader'], function($){
    * Check it the element is left of the begininning
    *
    * @method
-   * @name jquery.fold#leftofbegin
+   * @name gemini.fold#leftofbegin
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
@@ -116,7 +116,7 @@ define(['jquery-loader'], function($){
    * Check it the element is in the viewport
    *
    * @method
-   * @name jquery.fold#inviewport
+   * @name gemini.fold#inviewport
    * @param {element} element The dom element that you're inquiring
    * @param {object} options
    * @param {element} options.container The container element that the viewport applies to
