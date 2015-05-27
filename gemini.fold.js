@@ -14,7 +14,18 @@ element. Simply put, it tells you whether an element is on the screen.
  * @example
   G.belowthefold('#js-some-item');
  */
-define(['gemini'], function($){
+(function(factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['gemini'], factory);
+  } else if (typeof exports === 'object') {
+    // Node/CommonJS
+    module.exports = factory(require('gemini'));
+  } else {
+    // Browser globals
+    factory(G);
+  }
+}(function($) {
 
   /**
    * Check it the element is below the fold
@@ -145,4 +156,4 @@ define(['gemini'], function($){
   */
 
   return $;
-});
+}));
