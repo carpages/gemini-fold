@@ -14,19 +14,20 @@ element. Simply put, it tells you whether an element is on the screen.
  * @example
   G.belowthefold('#js-some-item');
  */
-(function(factory) {
-  if (typeof define === 'function' && define.amd) {
+( function( factory ) {
+  if ( typeof define === 'function' && define.amd ) {
     // AMD. Register as an anonymous module.
-    define(['gemini'], factory);
-  } else if (typeof exports === 'object') {
+    define([ 'gemini' ], factory );
+  } else if ( typeof exports === 'object' ) {
     // Node/CommonJS
-    module.exports = factory(require('gemini'));
+    module.exports = factory(
+      require( 'gemini' )
+    );
   } else {
     // Browser globals
-    factory(G);
+    factory( G );
   }
-}(function($) {
-
+}( function( $ ) {
   /**
    * Check it the element is below the fold
    *
@@ -38,17 +39,17 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {integer} options.threshhold The pixel threshold beyond the fold
    * @return {boolean} Returns whether the element is below the fold or not
   **/
-  $.belowthefold = function(element, options) {
+  $.belowthefold = function( element, options ) {
     var fold;
-    var settings = $.extend({}, {container:window, threshold: 0}, options);
+    var settings = $.extend({}, { container: window, threshold: 0 }, options );
 
-    if (settings.container === undefined || settings.container === window) {
-      fold = $(window).height() + $(window).scrollTop();
+    if ( settings.container === undefined || settings.container === window ) {
+      fold = $( window ).height() + $( window ).scrollTop();
     } else {
-      fold = $(settings.container).offset().top + $(settings.container).height();
+      fold = $( settings.container ).offset().top + $( settings.container ).height();
     }
 
-    return fold <= $(element).offset().top - settings.threshold;
+    return fold <= $( element ).offset().top - settings.threshold;
   };
 
   /**
@@ -62,17 +63,17 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {integer} options.threshhold The pixel threshold beyond the fold
    * @return {boolean} Returns whether the element is to the right of the fold or not
   **/
-  $.rightoffold = function(element, options) {
+  $.rightoffold = function( element, options ) {
     var fold;
-    var settings = $.extend({}, {container:window, threshold: 0}, options);
+    var settings = $.extend({}, { container: window, threshold: 0 }, options );
 
-    if (settings.container === undefined || settings.container === window) {
-      fold = $(window).width() + $(window).scrollLeft();
+    if ( settings.container === undefined || settings.container === window ) {
+      fold = $( window ).width() + $( window ).scrollLeft();
     } else {
-      fold = $(settings.container).offset().left + $(settings.container).width();
+      fold = $( settings.container ).offset().left + $( settings.container ).width();
     }
 
-    return fold <= $(element).offset().left - settings.threshold;
+    return fold <= $( element ).offset().left - settings.threshold;
   };
 
   /**
@@ -86,17 +87,17 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {integer} options.threshhold The pixel threshold beyond the top
    * @return {boolean} Returns whether the element is above of the top or not
   **/
-  $.abovethetop = function(element, options) {
+  $.abovethetop = function( element, options ) {
     var fold;
-    var settings = $.extend({}, {container:window, threshold: 0}, options);
+    var settings = $.extend({}, { container: window, threshold: 0 }, options );
 
-    if (settings.container === undefined || settings.container === window) {
-      fold = $(window).scrollTop();
+    if ( settings.container === undefined || settings.container === window ) {
+      fold = $( window ).scrollTop();
     } else {
-      fold = $(settings.container).offset().top;
+      fold = $( settings.container ).offset().top;
     }
 
-    return fold >= $(element).offset().top + settings.threshold  + $(element).height();
+    return fold >= $( element ).offset().top + settings.threshold + $( element ).height();
   };
 
   /**
@@ -110,17 +111,17 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {integer} options.threshhold The pixel threshold beyond the beginning
    * @return {boolean} Returns whether the element is to the left of the beginning or not
   **/
-  $.leftofbegin = function(element, options) {
+  $.leftofbegin = function( element, options ) {
     var fold;
-    var settings = $.extend({}, {container:window, threshold: 0}, options);
+    var settings = $.extend({}, { container: window, threshold: 0 }, options );
 
-    if (settings.container === undefined || settings.container === window) {
-      fold = $(window).scrollLeft();
+    if ( settings.container === undefined || settings.container === window ) {
+      fold = $( window ).scrollLeft();
     } else {
-      fold = $(settings.container).offset().left;
+      fold = $( settings.container ).offset().left;
     }
 
-    return fold >= $(element).offset().left + settings.threshold + $(element).width();
+    return fold >= $( element ).offset().left + settings.threshold + $( element ).width();
   };
 
   /**
@@ -134,9 +135,9 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {integer} options.threshhold The pixel threshold of the viewport
    * @return {boolean} Returns whether the element is in the viewport
   **/
-  $.inviewport = function(element, settings) {
-    return !$.rightoffold(element, settings) && !$.leftofbegin(element, settings) &&
-        !$.belowthefold(element, settings) && !$.abovethetop(element, settings);
+  $.inviewport = function( element, settings ) {
+    return !$.rightoffold( element, settings ) && !$.leftofbegin( element, settings ) &&
+        !$.belowthefold( element, settings ) && !$.abovethetop( element, settings );
   };
 
   // Custom selectors for your convenience.
