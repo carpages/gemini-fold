@@ -21,7 +21,7 @@ element. Simply put, it tells you whether an element is on the screen.
   } else if ( typeof exports === 'object' ) {
     // Node/CommonJS
     module.exports = factory(
-      require( 'gemini' )
+      require( 'gemini-loader' )
     );
   } else {
     // Browser globals
