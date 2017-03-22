@@ -12,9 +12,11 @@ requirejs.config({
 });
 
 require([ 'gemini', 'gemini.fold' ], function( G ) {
-  console.log( G.belowthefold );
-  console.log( G.rightoffold );
-  console.log( G.abovethetop );
-  console.log( G.leftofbegin );
-  console.log( G.inviewport );
+  console.log({
+    below: G.belowthefold( '.below' ),
+    right: G.rightoffold( '.right' ),
+    above: G.abovethetop( '.above' ),
+    left : G.leftofbegin( '.left' ),
+    start: G.inviewport( '.start' )
+  });
 });
