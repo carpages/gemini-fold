@@ -20,14 +20,12 @@ element. Simply put, it tells you whether an element is on the screen.
     define([ 'gemini' ], factory );
   } else if ( typeof exports === 'object' ) {
     // Node/CommonJS
-    module.exports = factory(
-      require( 'gemini-loader' )
-    );
+    module.exports = factory( require( 'gemini-loader' ));
   } else {
     // Browser globals
     factory( G );
   }
-}( function( $ ) {
+})( function( $ ) {
   /**
    * Check it the element is below the fold
    *
@@ -38,7 +36,7 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {element} options.container The container element that the viewport applies to
    * @param {integer} options.threshhold The pixel threshold beyond the fold
    * @return {boolean} Returns whether the element is below the fold or not
-  **/
+   **/
   $.belowthefold = function( element, options ) {
     var fold;
     var settings = $.extend({}, { container: window, threshold: 0 }, options );
@@ -62,7 +60,7 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {element} options.container The container element that the viewport applies to
    * @param {integer} options.threshhold The pixel threshold beyond the fold
    * @return {boolean} Returns whether the element is to the right of the fold or not
-  **/
+   **/
   $.rightoffold = function( element, options ) {
     var fold;
     var settings = $.extend({}, { container: window, threshold: 0 }, options );
@@ -86,7 +84,7 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {element} options.container The container element that the viewport applies to
    * @param {integer} options.threshhold The pixel threshold beyond the top
    * @return {boolean} Returns whether the element is above of the top or not
-  **/
+   **/
   $.abovethetop = function( element, options ) {
     var fold;
     var settings = $.extend({}, { container: window, threshold: 0 }, options );
@@ -110,7 +108,7 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {element} options.container The container element that the viewport applies to
    * @param {integer} options.threshhold The pixel threshold beyond the beginning
    * @return {boolean} Returns whether the element is to the left of the beginning or not
-  **/
+   **/
   $.leftofbegin = function( element, options ) {
     var fold;
     var settings = $.extend({}, { container: window, threshold: 0 }, options );
@@ -134,10 +132,14 @@ element. Simply put, it tells you whether an element is on the screen.
    * @param {element} options.container The container element that the viewport applies to
    * @param {integer} options.threshhold The pixel threshold of the viewport
    * @return {boolean} Returns whether the element is in the viewport
-  **/
+   **/
   $.inviewport = function( element, settings ) {
-    return !$.rightoffold( element, settings ) && !$.leftofbegin( element, settings ) &&
-        !$.belowthefold( element, settings ) && !$.abovethetop( element, settings );
+    return (
+      !$.rightoffold( element, settings ) &&
+      !$.leftofbegin( element, settings ) &&
+      !$.belowthefold( element, settings ) &&
+      !$.abovethetop( element, settings )
+    );
   };
 
   // Custom selectors for your convenience.
@@ -157,4 +159,4 @@ element. Simply put, it tells you whether an element is on the screen.
   */
 
   return $;
-}));
+});
